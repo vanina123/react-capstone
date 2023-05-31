@@ -1,18 +1,10 @@
-import { createStore, applyMiddleware } from 'redux';
-import { compose } from 'redux';
-import { combineReducers } from 'redux';
-import thunk from 'redux-thunk';
-import { displaySlice } from './Display/displaySlice';
-import { homeSlice } from './HomeDisplay/homeSlice';
+import { configureStore } from '@reduxjs/toolkit';
+import apiReducer from '../redux/API/apiSlice';
 
-const rootReducer = combineReducers({
-  details: displaySlice.reducer,
-  character: homeSlice.reducer,
+const store = configureStore({
+  reducer: {
+    api: apiReducer,
+  },
 });
-
-const store = createStore(
-  rootReducer,
-  compose(applyMiddleware(thunk)),
-);
 
 export default store;

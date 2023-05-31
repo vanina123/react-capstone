@@ -1,20 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import NavBar from './components/navbar';
-import Details from './components/display';
-import Display from './components/homeDisplay';
-function App() {
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './components/homePage';
+import DetailsPage from './components/detailsPage';
+
+const App = () => {
   return (
-    <div className="App">
-      <NavBar />
+    
+    <Router>
       <Routes>
-        <Route exact path = "/" element={<Display />} />
-        <Route path = "/details/:id" element={<Details />}/>
+        <Route exact path="/" component={<HomePage />} />
+        <Route path="/details/:id" component={<DetailsPage />} />
       </Routes>
-      
-    </div>
+    </Router>
+    // <div>
+    //   <HomePage />
+    //   <DetailsPage />
+    // </div>
+   
+    
   );
-}
+};
 
 export default App;
