@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import { fetchCharacters } from "../redux/API/apiSlice";
-import { FaCircle } from "react-icons/fa";
-import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import "./details.css";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams, Link } from 'react-router-dom';
+import { FaCircle, FaArrowLeft } from 'react-icons/fa';
+import { fetchCharacters } from '../redux/API/apiSlice';
+
+import './details.css';
+
 const DetailsPage = () => {
   const { id } = useParams();
   const characters = useSelector((state) => state.api.data);
@@ -20,7 +20,7 @@ const DetailsPage = () => {
     dispatch(fetchCharacters());
   }, [dispatch]);
 
-  if (status === "loading") {
+  if (status === 'loading') {
     return <div>Loading...</div>;
   }
 
@@ -30,29 +30,55 @@ const DetailsPage = () => {
 
   return (
     <div className="detail">
-      <Link to='/'> <FaArrowLeft /> </Link>
+      <Link to="/">
+        {' '}
+        <FaArrowLeft />
+        {' '}
+      </Link>
       <div className="pic">
         <img className="picture" src={character.image} alt="potrait" />
       </div>
       <div className="char-d">
         <h1>{character.name}</h1>
-        <p>Gender: {character.gender}</p>
-        <p>species: {character.species}</p>
-        <p>created: {character.created}</p>
+        <p>
+          Gender:
+          {character.gender}
+        </p>
+        <p>
+          species:
+          {character.species}
+        </p>
+        <p>
+          created:
+          {character.created}
+        </p>
         <p className="flex">
-          Status:{" "}
-          {character.status === "Alive" && (
+          Status:
+          {' '}
+          {character.status === 'Alive' && (
             <FaCircle className="text-green" />
           )}
-          {character.status === "unknown" && (
+          {character.status === 'unknown' && (
             <FaCircle className="text-zinc" />
           )}
-          {character.status === "Dead" && <FaCircle className="text-red" />}{" "}
+          {character.status === 'Dead' && <FaCircle className="text-red" />}
+          {' '}
           {character.status}
         </p>
-        <p>Origin: {character.origin.name}</p>
-        <p>Last seen at: {character.location.name}</p>
-        <p className="seen">Appearances: {character.episode.length} Episode(s)</p>
+        <p>
+          Origin:
+          {character.origin.name}
+        </p>
+        <p>
+          Last seen at:
+          {character.location.name}
+        </p>
+        <p className="seen">
+          Appearances:
+          {character.episode.length}
+          {' '}
+          Episode(s)
+        </p>
       </div>
     </div>
   );

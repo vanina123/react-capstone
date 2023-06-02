@@ -4,21 +4,18 @@ import HomePage from './components/homePage';
 import DetailsPage from './components/detailsPage';
 import NavBar from './components/navBar';
 
-const App = () => {
-  return (
-    <div className='App'>
-      <NavBar />
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<HomePage />} />
-          <Route path="/details/:id" element={<DetailsPage />} />
-        </Routes>
-      </Router>
+const App = () => (
+  <div className="App">
+    <NavBar />
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<HomePage />} />
+        <Route path="/details/:id" element={<DetailsPage />} />
+      </Routes>
+    </Router>
 
-    </div>
-    
-    
-  );
-};
+  </div>
+
+);
 
 export default App;

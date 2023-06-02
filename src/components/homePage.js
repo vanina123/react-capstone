@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCharacters } from "../redux/API/apiSlice";
-import { FaCircle } from "react-icons/fa";
-import "./home.css";
-import { FaSearch } from 'react-icons/fa';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { FaCircle, FaSearch } from 'react-icons/fa';
+import { fetchCharacters } from '../redux/API/apiSlice';
+import './home.css';
 
 const HomePage = () => {
   const [input, setInput] = useState('');
@@ -25,18 +24,22 @@ const HomePage = () => {
     const inputValue = e.target.value;
     setInput(inputValue);
 
-    const filtered = characters.results.filter((character) =>
-      character.name.toLowerCase().includes(inputValue.toLowerCase())
-    );
+    const filtered = characters.results.filter((character) => character.name.toLowerCase()
+      .includes(inputValue.toLowerCase()));
     setFilteredCharacters(filtered);
   };
 
-  if (status === "loading") {
+  if (status === 'loading') {
     return <div>Loading...</div>;
   }
 
-  if (status === "failed") {
-    return <div>Error: {error}</div>;
+  if (status === 'failed') {
+    return (
+      <div>
+        Error:
+        {error}
+      </div>
+    );
   }
 
   return (
@@ -60,16 +63,19 @@ const HomePage = () => {
                 <h2 className="card-name">{character.name}</h2>
                 <p className="card-p">{character.planet}</p>
                 <p className="text">
-                  {character.status === "Alive" && (
+                  {character.status === 'Alive' && (
                     <FaCircle className="text-green" />
                   )}
-                  {character.status === "unknown" && (
+                  {character.status === 'unknown' && (
                     <FaCircle className="text-zinc" />
                   )}
-                  {character.status === "Dead" && (
+                  {character.status === 'Dead' && (
                     <FaCircle className="text-red" />
                   )}
-                  {character.status} - {character.species}
+                  {character.status}
+                  {' '}
+                  -
+                  {character.species}
                 </p>
               </div>
             </a>

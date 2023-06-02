@@ -1,13 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { FaArrowLeft, FaCog, FaMicrophone } from 'react-icons/fa';
-import "./home.css";
+// import { NavLink } from 'react-router-dom';
+import { FaCog, FaMicrophone } from 'react-icons/fa';
+import './home.css';
 
-const NavBar = () => {
-
-  return (
-    <nav>
-      <div className='link'>
+const NavBar = () => (
+  <nav>
+    <div className="link">
       <div className="flex">
         <h2>Star Wars Characters</h2>
       </div>
@@ -16,10 +14,9 @@ const NavBar = () => {
         <FaMicrophone />
       </div>
 
-      </div>
-      
-    </nav>
-  );
-};
+    </div>
+
+  </nav>
+);
 
 export default NavBar;
