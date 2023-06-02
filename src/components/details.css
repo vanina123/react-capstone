@@ -1,0 +1,60 @@
+.detail {
+  gap: 1rem;
+  flex-direction: column;
+  display: flex;
+  background-color: orchid;
+}
+
+.pic {
+  width: 100%;
+}
+
+.picture {
+  object-position: center;
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+}
+
+.char-d {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.text-red {
+  color: red;
+}
+
+.text-green {
+  color: green;
+}
+
+.text-zink {
+  color: brown;
+}
+
+.flex {
+  gap: 0.5rem;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  margin: 0;
+}
+
+.p {
+  margin: 0;
+}
+
+/* @media screen and (min-width: 768px){
+
+} */

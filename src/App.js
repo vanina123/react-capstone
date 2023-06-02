@@ -2,21 +2,21 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/homePage';
 import DetailsPage from './components/detailsPage';
+import NavBar from './components/navBar';
 
 const App = () => {
   return (
+    <div className='App'>
+      <NavBar />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route path="/details/:id" element={<DetailsPage />} />
+        </Routes>
+      </Router>
+
+    </div>
     
-    <Router>
-      <Routes>
-        <Route exact path="/" component={<HomePage />} />
-        <Route path="/details/:id" component={<DetailsPage />} />
-      </Routes>
-    </Router>
-    // <div>
-    //   <HomePage />
-    //   <DetailsPage />
-    // </div>
-   
     
   );
 };
