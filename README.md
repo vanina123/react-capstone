@@ -90,6 +90,7 @@ Star War universe is a project i built with React that return a list of characte
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 [Live Demo Link](https://star-wars-characters.onrender.com/)
+
 [Live Video Link](https://drive.google.com/drive/folders/1X-I5I5CFyaPOV86Q6lmJqVQFbMtioVQo)
 
 ## 💻 Getting Started <a name="getting-started"></a>
