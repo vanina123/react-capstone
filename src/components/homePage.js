@@ -43,7 +43,7 @@ const HomePage = () => {
   }
 
   return (
-    <div className="home">
+    <div className="mino">
       <div className="flex2">
         <FaSearch />
         <input
@@ -54,34 +54,36 @@ const HomePage = () => {
           onChange={handleSearch}
         />
       </div>
-      {filteredCharacters && filteredCharacters.map((character) => (
-        <div key={character.id} className="all">
-          <div className="pic">
-            <a href={`/details/${character.id}`}>
-              <img className="picture" src={character.image} alt="portrait" />
-              <div className="card">
-                <h2 className="card-name">{character.name}</h2>
-                <p className="card-p">{character.planet}</p>
-                <p className="text">
-                  {character.status === 'Alive' && (
+      <div className="home">
+        {filteredCharacters && filteredCharacters.map((character) => (
+          <div key={character.id} className="all">
+            <div className="pic">
+              <a href={`/details/${character.id}`}>
+                <img className="picture" src={character.image} alt="portrait" />
+                <div className="card">
+                  <h2 className="card-name">{character.name}</h2>
+                  <p className="card-p">{character.planet}</p>
+                  <p className="text">
+                    {character.status === 'Alive' && (
                     <FaCircle className="text-green" />
-                  )}
-                  {character.status === 'unknown' && (
+                    )}
+                    {character.status === 'unknown' && (
                     <FaCircle className="text-zinc" />
-                  )}
-                  {character.status === 'Dead' && (
+                    )}
+                    {character.status === 'Dead' && (
                     <FaCircle className="text-red" />
-                  )}
-                  {character.status}
-                  {' '}
-                  -
-                  {character.species}
-                </p>
-              </div>
-            </a>
+                    )}
+                    {character.status}
+                    {' '}
+                    -
+                    {character.species}
+                  </p>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
