@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaCircle, FaSearch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { fetchCharacters } from '../redux/API/apiSlice';
 import './home.css';
 
@@ -58,7 +59,7 @@ const HomePage = () => {
         {filteredCharacters && filteredCharacters.map((character) => (
           <div key={character.id} className="all">
             <div className="pic">
-              <a href={`/details/${character.id}`}>
+              <Link to={`/details/${character.id}`}>
                 <img className="picture" src={character.image} alt="portrait" />
                 <div className="card">
                   <h2 className="card-name">{character.name}</h2>
@@ -79,7 +80,7 @@ const HomePage = () => {
                     {character.species}
                   </p>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         ))}
